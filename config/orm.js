@@ -29,7 +29,7 @@ function objToSql(ob){
 
 var orm = {
 
-selectAll: function(tableInput, cb){
+all: function(tableInput, cb){
     const queryString = "SELECT * FROM " + tableInput + ";"
     connection.query(queryString, function(err, result){
         if(err){
@@ -68,3 +68,7 @@ update: function(table, objColVals, condition, cb){
 
 }
 module.exports = orm
+
+
+
+

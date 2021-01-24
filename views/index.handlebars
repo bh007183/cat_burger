@@ -1,9 +1,11 @@
 <div class="container">
-    <h1 class="title">Ca...errrrrr Burgers!</h1>
+    <h1 class="title">Burgers!</h1>
+       <img class="image" src="assets/css/img.jpg">
+       
     <div class="two-handlebars">
         <div class="container-left">
 
-            <h2>Ca...errrrrr Burgers that are not devourd!</h2>
+            <h2>Not devourd!</h2>
 
             <ul class="left">
                 {{#each burgers}}
@@ -15,9 +17,9 @@
         </div>
 
         <div class="container-right">
-            <h2>Ca...errrrrr Burgers that are sleepy!</h2>
+            <h2>Devourd Burgers!</h2>
 
-            <ul class="right">
+            <ul id="right">
                 {{#each burgers}}
                     {{#if devour}}
                         {{> burgers/burger-block devour=false}}

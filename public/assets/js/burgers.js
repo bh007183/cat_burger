@@ -43,5 +43,19 @@ $(".create-form").on("submit", function(event){
    
 })
 
+
+
+$(".delet").on("click", function(event){
+    const id = $(this).attr("data-id")
+
+    $.ajax({
+        url: "/api/burgers/" + id,
+        method: "DELETE",
+    }).then(res => {
+        console.log(res)
+         location.reload()
+    })
+})
+
 })
 

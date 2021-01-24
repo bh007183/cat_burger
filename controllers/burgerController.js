@@ -46,4 +46,14 @@ router.put("/api/burgers/:id", function(req, res){
     
 })
 
+router.delete("/api/burgers/:id", function(req, res){
+    console.log(req.params.id)
+    burgers.delete([
+        req.params.id
+    ], function(result){
+        res.json({id: result.insertedId} + " POST router Success on line 54 at burgerController.js")
+    })
+    
+})
+
 module.exports = router

@@ -1,5 +1,5 @@
 const orm = require("../config/orm.js")
-const burger = {
+const burgers = {
     all: function(cb){
         orm.all("burgers", function(res){
             cb(res)
@@ -12,19 +12,22 @@ const burger = {
         })
     },
 
-    // update: function(objColVals, condition, cb){
-    //     orm.update("burgers", objColVals, condition, function(res){
-    //         cb(res)
-    //     })
-    // },
+
     update: function(objColVals, condition, cb) {
         orm.update("burgers", objColVals, condition, function(res) {
           cb(res);
         });
-      }
+      },
+
+      delete: function(idVal, cb){
+          orm.delete(idVal, function(res){
+              cb(res)
+          })
+        
+    }
 
 
 
 }
 
-module.exports = burger
+module.exports = burgers

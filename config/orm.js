@@ -64,6 +64,15 @@ update: function(table, objColVals, condition, cb){
         }
         cb(result)
     })
+},
+
+delete: function(idVal, cb){
+    const queryString = "DELETE FROM burgers WHERE id = " + idVal + ";"
+    connection.query(queryString, function(err, result){
+        if (err){
+            throw err;
+        }cb(result)
+    })
 }
 
 

@@ -1,29 +1,30 @@
 const connections = require("../config/connection")
 const connection = require("./connection")
 
-function printQuestionMarks(num){
-    const arr = [];
-    for (let i = 0; i < num; i++){
-        arr.push("?")
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
     }
-    return arr.toString()
-    
-}
+  
+    return arr.toString();
+  }
 
-function objToSql(ob){
+function objToSql(obj){
     var arr = []
 
     for(const key in obj){
         const value = obj[key];
         if(Object.hasOwnProperty.call(obj, key)){
             if (typeof value === "string" && value.indexOf(" ") >= 0){
-                value = "'" + value + "'"
+                value = "'" + value + "'";
             }
-            arr.push(key + "=" +value)
+            arr.push(key + "=" + value)
         }
     }
     console.log(arr.toString + "orm.js ln 25")
-    return arr.toString
+    return arr.toString()
 }
 
 
@@ -64,6 +65,7 @@ update: function(table, objColVals, condition, cb){
         cb(result)
     })
 }
+
 
 
 }

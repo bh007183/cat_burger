@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(128, 128, 127);
+}
+
+.title{
+    text-align: center;
+}
+
+.two-handlebars{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-left{
+   
+}
+
+.container-right{
+   
+}
+.search-bar{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    float:bottom
+}
+.add{
+    width:100%;
+    text-align: center;
+}

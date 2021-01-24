@@ -3,12 +3,12 @@ const burgers = require("../models/burger.js");
 
 const router = express.Router();
 
-const burger = require("../models/burger.js");
+
 
 
 
 router.get("/", function(req, res){
-    burger.all(function(data){
+    burgers.all(function(data){
         const hbsObject = {
             burgers: data
         }
@@ -19,7 +19,8 @@ router.get("/", function(req, res){
 })
 
 router.post("/api/burgers", function(req, res){
-    burger.create([
+    console.log(req.body)
+    burgers.create([
         "name", "devour"
     ],[
         req.body.name, req.body.devour
@@ -33,13 +34,13 @@ router.put("/api/burgers/:id", function(req, res){
     const condition = "id = " + req.params.id;
     console.log ("condition", condition + "///ln 34 burgerController.js")
 
-    burger.update({
+    burgers.update({
         devour: req.body.devour
-    }, condition, function(results){
+    }, condition, function(result){
         if (result.changedRows === 0){
             return res.status(404)
         } else{
-            res.status(200)
+            res.status(200).end()
         }
     })
     
